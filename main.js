@@ -1,4 +1,3 @@
-import 'https://openlayers.org/en/v4.6.5/css/ol.css';
 import Feature from 'ol/Feature';
 import Map from 'ol/Map';
 import {OSM, Vector as VectorSource} from 'ol/source';

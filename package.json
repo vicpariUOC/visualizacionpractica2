@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html --no-minify",
-    "build": "parcel build --public-url . index.html --no-minify",
+    "start": "parcel index.html main.css --no-minify",
+    "build": "parcel build --public-url . index.html main.css --no-minify",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {

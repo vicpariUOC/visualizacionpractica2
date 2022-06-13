@@ -40,7 +40,7 @@ function getElementFromConstantOrder(constant, constantList, destinationList) {
 var data;
 var filteredData;
 function loadData() {
-  var csvFile = 'https://missingmigrants.iom.int/sites/g/files/tmzbdl601/files/report-migrant-incident/Missing_Migrants_Global_Figures_allData.csv';
+  var csvFile = './Missing_Migrants_Global_Figures_allData.csv';
   $.ajax({
     type: "GET",
     url: csvFile,

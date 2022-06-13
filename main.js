@@ -1,4 +1,3 @@
-import 'ol/ol.css';
 import Feature from 'ol/Feature';
 import Map from 'ol/Map';
 import {OSM, Vector as VectorSource} from 'ol/source';

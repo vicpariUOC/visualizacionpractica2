@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/3.18.3/minified.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/vicpariUOC/visualizacionpractica2/gh-pages/main.css">
+    <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migrants deadliest routes</title>
+  <link rel="stylesheet" href="main.4e8a583d.css"></head>
+  <body>
+  <div role="banner" class="navbar w-nav">
+    <div class="w-container">
+      <a href="#" class="brand-block w-clearfix w-nav-brand">
+        <h1 class="logo-title">MIGRANTS PASSED AWAY</h1>
+      </a>
+    </div>
+  </div>
+  <div class="header wf-section">
+    <div class="w-container">
+      <h1 class="main-heading">MIGRANTS DEAD AND DISSAPEARED</h1>
+      <div class="divider"></div>
+      <div class="main-subtitle">Migration routes with fatalities involved</div>
+    </div>
+  </div>
+  <div class="about-section wf-section">
+    <img src="https://uploads-ssl.webflow.com/62a7879f7d67d154447a8948/62a7879f7d67d1987d7a895a_x-black.png" width="52" alt="" class="x-icon">
+    <div class="w-container">
+      <p class="about-text">Every day there are thousands of people trying to fight for their survivance, migrating to an international destination.<br>Only one dead is more than what it is deserved.<br>We should not forget any of them.</p>
+    </div>
+  </div>
+  <div class="wf-section">
+    <div class="w-form">
+      <form id="search-form" name="search-form" data-name="Search from" method="get">
+      <div class="w-row">
+        <div class="w-col w-col-6">
+            <label for="fieldMigrationRoute">Migration route</label>
+            <select id="fieldMigrationRoute" name="fieldMigrationRoute" data-name="Migration route" class="w-select">
+              <option value="">Select one...</option>
+              <option value="Afghanistan to Iran">Afghanistan to Iran</option>
+              <option value="Belarus-EU border">Belarus-EU border</option>
+              <option value="Caribbean to US">Caribbean to US</option>
+              <option value="Central Mediterranean">Central Mediterranean</option>
+              <option value="Central Mediterranean,US-Mexico border crossing">Central Mediterranean,US-Mexico border crossing</option>
+              <option value="Comoros to Mayotte">Comoros to Mayotte</option>
+              <option value="Darien Gap">Darien Gap</option>
+              <option value="Dominican Republic to Puerto Rico">Dominican Republic to Puerto Rico</option>
+              <option value="DRC to Uganda">DRC to Uganda</option>
+              <option value="Eastern Mediterranean">Eastern Mediterranean</option>
+              <option value="English Channel to the UK">English Channel to the UK</option>
+              <option value="Haiti to Dominican Republic">Haiti to Dominican Republic</option>
+              <option value="Horn of Africa to Yemen crossing">Horn of Africa to Yemen crossing</option>
+              <option value="Iran to Turkey">Iran to Turkey</option>
+              <option value="Italy to France">Italy to France</option>
+              <option value="Sahara Desert crossing">Sahara Desert crossing</option>
+              <option value="Syria to Turkey">Syria to Turkey</option>
+              <option value="Turkey-Europe land route">Turkey-Europe land route</option>
+              <option value="Ukraine to Europe">Ukraine to Europe</option>
+              <option value="US-Mexico border crossing">US-Mexico border crossing</option>
+              <option value="Venezuela to Caribbean">Venezuela to Caribbean</option>
+              <option value="Western Africa / Atlantic route to the Canary Islands">Western Africa / Atlantic route to the Canary Islands</option>
+              <option value="Western Balkans">Western Balkans</option>
+              <option value="Western Mediterranean">Western Mediterranean</option>
+            </select>
+
+            <label for="fieldRegionOrigin">Region of origin</label>
+            <select id="fieldRegionOrigin" name="fieldRegionOrigin" data-name="Region of origin" class="w-select">
+              <option value="">Select one...</option>
+              <option value="Caribbean">Caribbean</option>
+              <option value="Caribbean (P)">Caribbean (P)</option>
+              <option value="Central America">Central America</option>
+              <option value="Central America (P)">Central America (P)</option>
+              <option value="Central Asia">Central Asia</option>
+              <option value="Eastern Africa">Eastern Africa</option>
+              <option value="Eastern Africa (P)">Eastern Africa (P)</option>
+              <option value="Eastern Asia">Eastern Asia</option>
+              <option value="Eastern Asia (P)">Eastern Asia (P)</option>
+              <option value="Europe">Europe</option>
+              <option value="Latin America / Caribbean (P)">Latin America / Caribbean (P)</option>
+              <option value="Middle Africa">Middle Africa</option>
+              <option value="Mixed">Mixed</option>
+              <option value="Northern Africa">Northern Africa</option>
+              <option value="Northern Africa (P)">Northern Africa (P)</option>
+              <option value="Northern America">Northern America</option>
+              <option value="Oceania">Oceania</option>
+              <option value="South America">South America</option>
+              <option value="South America (P)">South America (P)</option>
+              <option value="South-eastern Asia">South-eastern Asia</option>
+              <option value="South-eastern Asia (P)">South-eastern Asia (P)</option>
+              <option value="Southern Africa">Southern Africa</option>
+              <option value="Southern Asia">Southern Asia</option>
+              <option value="Southern Asia (P)">Southern Asia (P)</option>
+              <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
+              <option value="Sub-Saharan Africa (P)">Sub-Saharan Africa (P)</option>
+              <option value="Unknown">Unknown</option>
+              <option value="Western / Southern Asia">Western / Southern Asia</option>
+              <option value="Western / Southern Asia (P)">Western / Southern Asia (P)</option>
+              <option value="Western Africa">Western Africa</option>
+              <option value="Western Africa (P)">Western Africa (P)</option>
+              <option value="Western Asia">Western Asia</option>
+              <option value="Western Asia (P)">Western Asia (P)</option>
+            </select>
+        </div>
+        <div class="w-col w-col-6">
+          <label for="fieldDeathCause">Cause of death</label>
+          <select id="fieldDeathCause" name="fieldDeathCause" data-name="Cause of death" class="w-select">
+            <option value="">Select one...</option>
+            <option value="Accidental death">Accidental death</option>
+            <option value="Drowning">Drowning</option>
+            <option value="Drowning,Harsh environmental conditions / lack of adequate shelter, food, water">Drowning,Harsh environmental conditions / lack of adequate shelter, food, water</option>
+            <option value="Drowning,Mixed or unknown">Drowning,Mixed or unknown</option>
+            <option value="Drowning,Sickness / lack of access to adequate healthcare">Drowning,Sickness / lack of access to adequate healthcare</option>
+            <option value="Drowning,Vehicle accident / death linked to hazardous transport">Drowning,Vehicle accident / death linked to hazardous transport</option>
+            <option value="Harsh environmental conditions / lack of adequate shelter, food, water">Harsh environmental conditions / lack of adequate shelter, food, water</option>
+            <option value="Harsh environmental conditions / lack of adequate shelter, food, water,Mixed or unknown">Harsh environmental conditions / lack of adequate shelter, food, water,Mixed or unknown</option>
+            <option value="Harsh environmental conditions / lack of adequate shelter, food, water,Sickness / lack of access to adequate healthcare">Harsh environmental conditions / lack of adequate shelter, food, water,Sickness / lack of access to adequate healthcare</option>
+            <option value="Mixed or unknown">Mixed or unknown</option>
+            <option value="Mixed or unknown,Vehicle accident / death linked to hazardous transport,Violence">Mixed or unknown,Vehicle accident / death linked to hazardous transport,Violence</option>
+            <option value="Sickness / lack of access to adequate healthcare">Sickness / lack of access to adequate healthcare</option>
+            <option value="Vehicle accident / death linked to hazardous transport">Vehicle accident / death linked to hazardous transport</option>
+            <option value="Violence">Violence</option>
+          </select>
+
+          <label for="fieldIncidentRegion">Region of incident</label>
+          <select id="fieldIncidentRegion" name="fieldIncidentRegion" data-name="Region of incident" class="w-select">
+            <option value="">Select one...</option>
+            <option value="Caribbean">Caribbean</option>
+            <option value="Central America">Central America</option>
+            <option value="Central Asia">Central Asia</option>
+            <option value="Eastern Africa">Eastern Africa</option>
+            <option value="Eastern Asia">Eastern Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Mediterranean">Mediterranean</option>
+            <option value="Middle Africa">Middle Africa</option>
+            <option value="North America">North America</option>
+            <option value="Northern Africa">Northern Africa</option>
+            <option value="South America">South America</option>
+            <option value="South-eastern Asia">South-eastern Asia</option>
+            <option value="Southern Africa">Southern Africa</option>
+            <option value="Southern Asia">Southern Asia</option>
+            <option value="Western Africa">Western Africa</option>
+            <option value="Western Asia">Western Asia</option>
+          </select>
+        </div>
+      </div>
+        <input id="searchButton" type="button" value="Search" data-wait="Please wait..." class="w-button">
+        </form>
+    </div>
+  </div>
+  <div id="map" class="map"></div>
+  <section id="cards-section" class="cards-section wf-section">
+    <div class="centered-container w-container">
+      <h2>DRAMA NUMBERS</h2>
+      <p>We will show you the amount of people not surviving...</p>
+      <hr>
+      <div class="cards-grid-container">
+        <div id="w-node-_99d0170f-4e32-8f41-c86a-eacb825e73ca-357a894f">
+          <div><span id="totalDeathMissing" class="big-number"></span></div>
+          <h3>TOTAL DEATH AND MISSING</h3>
+        </div>
+        <div id="w-node-_99d0170f-4e32-8f41-c86a-eacb825e73d1-357a894f">
+          <div><span id="totalWomen" class="big-number"></span></div>
+          <h3 id="w-node-_99d0170f-4e32-8f41-c86a-eacb825e73d4-357a894f">WOMEN</h3>
+        </div>
+        <div id="w-node-_99d0170f-4e32-8f41-c86a-eacb825e73d8-357a894f">
+          <div><span id="totalChildren" class="big-number"></span></div>
+          <h3 id="w-node-_99d0170f-4e32-8f41-c86a-eacb825e73db-357a894f">CHILDREN</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="contact" class="section contact wf-section">
+    <div class="w-container">
+      <h2>CONTACT ME</h2>
+      <div class="divider grey"></div>
+      <div class="w-row">
+        <div class="w-col w-col-4"></div>
+        <div class="w-col w-col-4">
+          <div class="icon-wrapper _2"><img src="https://uploads-ssl.webflow.com/62a7879f7d67d154447a8948/62a7879f7d67d15ba67a895b_mail-icon.png" width="70" alt=""></div>
+          <p class="contact-text">Email me
+            <br><a href="mailto:contact@minimal.com?subject=Hi!" target="_blank" class="link">vicpari@uoc.edu</a>
+          </p>
+        </div>
+        <div class="w-col w-col-4"></div>
+      </div>
+    </div>
+  </div>
+  <footer id="footer" class="section footer wf-section">
+    <div class="w-container">
+      <p class="footer-text">Template from: webflow.com<br>Data source: https://missingmigrants.iom.int/</p>
+    </div>
+  </footer>
+  <div id="popup" class="ol-popup">
+  <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+  <div id="popup-content"></div>
+  </div>
+  <div id="table-content" class="table-content"></div>
+  <script type="module" src="main.bdf29df3.js"></script>
+  </body>
+</html>
+
+

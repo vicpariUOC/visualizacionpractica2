@@ -39,14 +39,16 @@ function getElementFromConstantOrder(constant, constantList, destinationList) {
 
 var data;
 var filteredData;
+
+var csv = require('jquery-csv');
 function loadData() {
-  var csvFile = 'https://missingmigrants.iom.int/sites/g/files/tmzbdl601/files/report-migrant-incident/Missing_Migrants_Global_Figures_allData.csv';
+  var csvFile = 'https://vicpariuoc.github.io/visualizacionpractica2/my-app/dist/Missing_Migrants_Global_Figures_allData.csv';
   $.ajax({
     type: "GET",
     url: csvFile,
     dataType: "text",
     success: function(response) {
-      data = $.csv.toObjects(response);
+      data = csv.toObjects(response);
       loadMap(data);
     }
   });
@@ -224,20 +226,21 @@ function loadMap(data) {
             '  <tbody>\n' +
             '    <tr>\n' +
             '      <th scope="row">Dead and missing</th>\n' +
-            '      <td>' + feature.getProperties()["numDeathMissing"] || 'N/A' + '</td>\n' +
+            '      <td>' + (feature.getProperties()["numDeathMissing"] || 'Unknown') + '</td>\n' +
             '      <th scope="row">Survivors</th>\n' +
-            '      <td>' + feature.getProperties()["numSurvivors"] || 'N/A' + '</td>\n' +
+            '      <td>' + (feature.getProperties()["numSurvivors"] || 'Unknown') + '</td>\n' +
             '    </tr>\n' +
             '    <tr>\n' +
             '      <th scope="row">Females dead</th>\n' +
-            '      <td>' + feature.getProperties()["numDeathFemales"] || 'N/A' + '</td>\n' +
+            '      <td>' + (feature.getProperties()["numDeathFemales"] || 'Unknown') + '</td>\n' +
             '      <th scope="row">Childrens dead</th>\n' +
-            '      <td>' + feature.getProperties()["numDeathChildren"] || 'N/A' + '</td>\n' +
+            '      <td>' + (feature.getProperties()["numDeathChildren"] || 'Unknown') + '</td>\n' +
             '    </tr>\n' +
             '  </tbody>\n' +
             '</table>' +
             '<a href="#table-content" class="link-info">More info</a>' +
             '</div></div>';
+        console.log(popupContent.innerHTML);
         tableContent.innerHTML = '<table class="table">\n' +
             '  <tbody>\n' +
             '    <tr>\n' +
